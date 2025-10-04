@@ -45,18 +45,19 @@ nav {
   align-items: flex-end;
   justify-content: center;
   text-align: center;
-  border-left: 3px solid #2196f3;
+   border-left: 3px solid #2196f3;
   border-bottom: 3px solid #2196f3;
 }
 
 nav a {
-  font-size: 1.9rem;
+  font-size: 1.9rem !important;
   font-weight: 500;
   margin-left: 4rem;
   display: inline-block;
   border-bottom: 3px solid transparent;
   color: #fafafa;
-  transition: color .5s, border-bottom-color .5s, transform .5s;
+ ext-decoration: none;
+  transition: color 1s cubic-bezier(0.23, 1, 0.32, 1), border-bottom-color 1s cubic-bezier(0.23, 1, 0.32, 1), transform 1s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 nav a:hover,

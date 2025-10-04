@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -10,28 +11,29 @@
     font-family: 'Poppins', sans-serif;
 }
 
-html{
+/* ===== BASE ===== */
+html {
     font-size: 70%;
-
 }
 
-body{
+body {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background: #000000;
     overflow-x: hidden;
     color: #fafafa;
-    padding-top: 80px; 
+    padding-top: 80px;   /* cukup buat header fixed */
+    word-wrap: break-word;
 }
 
+/* ===== HEADER & NAV ===== */
 header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000; /* biar nggak ketiban konten */
+  z-index: 1000;
 }
-
 
 nav {
   display: flex;
@@ -39,40 +41,28 @@ nav {
   padding: .5rem 1rem;
   background-color: #161616;
   border-radius: 12px;
-  display: flex;
   flex-direction: row;
   align-items: flex-end;
   justify-content: center;
   text-align: center;
-
-  /* tambahin ini biar konsisten */
   border-left: 3px solid #2196f3;
   border-bottom: 3px solid #2196f3;
 }
 
-
 nav a {
-  font-size: 1.9rem !important;
+  font-size: 1.9rem;
   font-weight: 500;
   margin-left: 4rem;
   display: inline-block;
   border-bottom: 3px solid transparent;
   color: #fafafa;
-  text-decoration: none;
-  transition: color 1s cubic-bezier(0.23, 1, 0.32, 1), border-bottom-color 1s cubic-bezier(0.23, 1, 0.32, 1), transform 1s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: color .5s, border-bottom-color .5s, transform .5s;
 }
 
 nav a:hover,
 nav a.active {
   color: #2196f3;
   border-bottom: 3px solid #1877f3;
-  transform: none;
-  padding: 0;
-    border-radius: 0;
-}
-
-body{
-  padding: 5rem;
 }
 
 nav a.active {
@@ -80,39 +70,10 @@ nav a.active {
     border-bottom: 3px solid #fff !important;
     font-weight: bold;
     transform: scale(1.08);
-    transition: color 1s cubic-bezier(0.23, 1, 0.32, 1), border-bottom-color 1s cubic-bezier(0.23, 1, 0.32, 1), transform 1s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-@media (max-width: 995px) {
-        nav {
-                width: auto;
-                border-left: 3px solid #2196f3;
-                border-bottom: 3px solid #2196f3;
-                padding: 1rem;
-                background-color: #161616;
-                border-top: 0.1rem solid rgba(0,0,0,0.1);
-                gap: 0.8rem;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-                flex-wrap: wrap;
-        }
-        
-        nav a {
-                font-size: 1.2rem;
-                margin-left: 0.5rem;
-                display: inline;
-        }
-}
-
-@media (max-width: 600px) {
-    section {
-        padding: 1rem 2%;
-    }
-}
-
-
-.home{
+/* ===== HOME ===== */
+.home {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -122,29 +83,8 @@ nav a.active {
     text-align: center;
 }
 
-#projects h2 {
-  font-size: 3rem;
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-span{
+span {
     color: #2196f3;
-}
-
-.project-info h3 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  line-height: 1.5;
-}
-
-
-.project-info p {
-    font-size: 1.2rem;
-    font-weight: 300;
-    line-height: 1.5;
-    max-width: 100%;
-    text-align: center;
 }
 
 .btn {
@@ -161,33 +101,28 @@ span{
   transition: background 0.4s, color 0.4s, box-shadow 0.4s;
   box-shadow: 0 0 0px #2196f3;
 }
-
 .btn:hover {
   background: #2196f3;
   color: #fff;
   box-shadow: 0 0 16px #2196f3;
 }
-
 .home-content .btn {
   display: block;
   margin: 2rem auto;
   text-align: center;
 }
 
-body {
-  word-wrap: break-word;
-  overflow-x: hidden;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-}
+/* ===== PROJECTS ===== */
 #projects {
   padding: 40px 20px;
   background: #000000;
   color: white;
+}
+
+#projects h2 {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .project-list {
@@ -204,11 +139,9 @@ body {
   border-radius: 19px;
   transition: transform 0.2s ease;
 }
-
 .project-item:hover {
   transform: translateX(5px);
 }
-
 .project-item img {
   width: 100px;
   height: 100px;
@@ -216,82 +149,39 @@ body {
   border-radius: 8px;
   margin-right: 15px;
 }
-
 .project-info h3 {
+  font-size: 2.5rem;
   margin: 0;
   color: #1e90ff;
+  font-weight: 700;
 }
-
 .project-info p {
-  margin: 5px 0 0;
-  font-size: 1.5rem !important;
-  color: #ccc;
-  text-align: left !important;
-  text-justify: inter-word !important;
-  hyphens: auto;
-  overflow-wrap: break-word;
-}
-
-
-.back-btn {
-  display: inline-block;
-  padding: 8px 15px;
-  background: #1e90ff;
-  color: white;
-  border-radius: 6px;
-  text-decoration: none;
-  margin: 20px;
-  transition: background 0.3s;
   font-size: 1.5rem;
+  color: #ccc;
+  text-align: left;
+  line-height: 1.6;
 }
 
-.back-btn:hover {
-  background: #0d6efd;
-}
-
-@media (max-width: 600px) {
-  .project-item {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .project-item img {
-    margin: 0 0 10px 0;
-  }
-
-  .project-info p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    text-align: left !important;
-  }
-}
-
-/* === Desk Portfolio Section === */
+/* ===== SECTIONS ===== */
 .title-section {
     text-align: center;
     margin-bottom: 40px;
 }
-
 .title-section h1 {
     font-size: 4rem;
     color: #2196f3;
     margin-bottom: 20px;
 }
-
 .title-section p {
     font-size: 1.7rem;
     font-weight: 300;
     line-height: 1.8;
-    max-width: 100%;        /* biar hampir penuh layar */
-    margin: 0 auto;        /* rata tengah dengan lebar 90% */
-    text-align: left;   /* biar teks rapi penuh kiri-kanan */
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: left;
     color: #ddd;
 }
 
-
-
-/* === Section General Style === */
 .role-section,
 .technologi-section,
 .keyfeature-section,
@@ -304,7 +194,6 @@ body {
     align-items: center;
     width: 100%;
 }
-
 .role-section h1,
 .technologi-section h1,
 .keyfeature-section h1,
@@ -315,7 +204,6 @@ body {
     color: #2196f3;
 }
 
-/* === Container Grid === */
 .role-container,
 .technologi-container,
 .keyfeature-container,
@@ -329,7 +217,7 @@ body {
     margin: 0 auto;
 }
 
-/* === Card === */
+/* Card */
 .card {
     background: #161616;
     border-radius: 12px;
@@ -338,8 +226,6 @@ body {
     text-align: left;
     width: 100%;
 }
-
-
 .card ul li {
     font-size: 1.5rem;
     padding: 8px 0;
@@ -347,40 +233,17 @@ body {
     color: #fff;
 }
 
-/* === Mobile Fix === */
-@media (max-width: 768px) {
-    .title-section p {
-        font-size: 1.3rem;
-        max-width: 100%;
-        padding: 0 15px;
-    }
-
-    .role-container,
-    .technologi-container,
-    .keyfeature-container,
-    .result-container,
-    .pictorvid-container {
-        grid-template-columns: 1fr; /* biar 1 kolom penuh */
-    }
-
-    .card {
-        width: 100%;
-        margin: 0;
-    }
-  }
-
- .pict {
+/* Picture */
+.pict {
   text-align: center;
   padding: 30px 0;
 }
-
 .pict-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
 }
-
 .pict-card {
   width: 250px;      
   height: 180px;
@@ -391,29 +254,28 @@ body {
   justify-content: center;
   align-items: center;
 }
-
 .pict-card img {
   width: 100%;
   height: 100%;
-  object-fit: cover;   /* gambar proporsional, gak gepeng */
+  object-fit: cover;
   border-radius: 12px;
 }
+
+/* Video */
 .video {
   text-align: center;
   padding: 30px 0;
 }
-
 .video-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
 }
-
 .video-card {
   width: 100%;
-  max-width: 400px;   /* batas maksimal di desktop */
-  aspect-ratio: 1/1;  /* biar tetap kotak */
+  max-width: 400px;
+  aspect-ratio: 1/1;
   background: #161616;
   border-radius: 12px;
   overflow: hidden;
@@ -421,21 +283,92 @@ body {
   justify-content: center;
   align-items: center;
 }
-
-
 .video-card video {
   width: 100%;
   height: 100%;
-  object-fit: cover;   /* gambar proporsional, gak gepeng */
+  object-fit: cover;
   border-radius: 12px;
 }
-/* Responsive untuk layar kecil */
+
+/* ===== BACK BUTTON ===== */
+.back-btn {
+  display: inline-block;
+  padding: 8px 15px;
+  background: #1e90ff;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  margin: 20px;
+  transition: background 0.3s;
+  font-size: 1.5rem;
+}
+.back-btn:hover {
+  background: #0d6efd;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 995px) {
+  nav {
+    flex-wrap: wrap;
+    padding: .5rem;
+    gap: .5rem;
+  }
+  nav a {
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+    display: inline;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 0 1rem;
+  }
+  .role-container,
+  .technologi-container,
+  .keyfeature-container,
+  .result-container,
+  .pictorvid-container {
+    grid-template-columns: 1fr;
+  }
+  .card, .video-card, .pict-card {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .title-section p {
+    font-size: 1.3rem;
+    padding: 0 15px;
+  }
+  .project-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .project-item img {
+    margin: 0 0 10px 0;
+  }
+  .project-info p {
+    font-size: 1.2rem;
+    text-align: left;
+  }
+}
+
 @media (max-width: 480px) {
+  h1, h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
   .video-card {
-    max-width: 100%;   /* lebar penuh HP */
+    max-width: 100%;
     border-radius: 8px;
   }
-
   .video-card video {
     width: 100%;
     height: auto;
